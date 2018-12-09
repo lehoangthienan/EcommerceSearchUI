@@ -1,19 +1,36 @@
 package com.vision.block.kotlin
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Context.LOCATION_SERVICE
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.location.Criteria
+import android.location.Location
+import android.location.LocationManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.*
 import kotlinx.android.synthetic.main.fragment_map.*
 
 
 class MapFragment : BaseFragment(), OnMapReadyCallback {
 
-    private lateinit var gmap: GoogleMap
+    private val locationCustom = LocationCustom()
+    private var gmap: GoogleMap? = null
+    private var viewLocation: View? = null
+    private var productImage: String =
+        "https://macbookshop.vn/wp-content/uploads/2018/07/Macbook-pro-13inch-2018-TouchBar-SILVER.jpeg"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        viewLocation = inflater.inflate(R.layout.layout_custom_marker, container, false)
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
@@ -22,14 +39,157 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
 
     }
 
+    private fun addMarker() {
+        locationCustom.showMemberLocationOnMap(gmap, productImage, 10.869251, 106.801489, viewLocation)
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://zdnet4.cbsistatic.com/hub/i/2018/09/21/7d30bae4-58d0-4168-87f3-6ec65630aa31/b1a7c19baa291431560da3d607cf6ffe/iphone-xs-max.jpg",
+            10.864005,
+            106.795705,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "http://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Le%C3%AFko_au_bois_de_la_Cambre.jpg/440px-Le%C3%AFko_au_bois_de_la_Cambre.jpg",
+            10.875063,
+            106.801398,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://i.ytimg.com/vi/KeYSjZfojbo/maxresdefault.jpg",
+            10.868152,
+            106.795519,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "http://www.motorcyclelife.com.au/wp-content/uploads/2017/02/2017-Honda-SH150.jpg",
+            10.865159,
+            106.804788,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://donghosaigon.vn/wp-content/uploads/2017/03/dong-ho-nam-deo-tay-casio-edifice-efr-552d-1a3vudf-chinh-hang-tphcm.jpg",
+            10.870554,
+            106.808608,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://cellphones.com.vn/media/wysiwyg/accessories/speaker/loa-xiaomi-square-box-2-1.jpg",
+            10.861198,
+            106.798265,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://cdn.concung.com/25457-24709-gtt_large/ly-co-quai-superware-hoa-tiet-hello-kitty-c352-2.jpg",
+            10.858837,
+            106.798823,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://gaubongdep.com/wp-content/uploads/2017/07/hinh-san-pham-goi-tron-cho-shiba-truoc.jpg",
+            10.863726,
+            106.804016,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "http://www.gsbattery.vn/Data/Sites/1/Product/9/gt5a.jpg",
+            10.857404,
+            106.801484,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://www.ircvietnam.com/images/product/100-90-14%20ss560f%20%20-%20100-90-14%20ss560r.jpg",
+            10.863684,
+            106.804788,
+            viewLocation
+        )
+        locationCustom.showMemberLocationOnMap(
+            gmap,
+            "https://media.thethao247.vn/upload/quy/2017/03/22/winner-9.JPG",
+            10.862335,
+            106.806505,
+            viewLocation
+        )
+        val latLng = LatLng(10.869251, 106.801489)
+        gmap?.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+    }
 
+
+    @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         gmap = googleMap
+//        gmap?.isMyLocationEnabled = true
+//        gmap?.uiSettings?.isMyLocationButtonEnabled = true
         setDismissProgressLoadMapDialog()
+        addMarker()
+
+        val locationManager = activity!!.getSystemService(LOCATION_SERVICE) as LocationManager
+        val criteria = Criteria()
+        val bestProvider = locationManager.getBestProvider(criteria, true)
+        if (ActivityCompat.checkSelfPermission(
+                activity!!,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                context!!, Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
+        }
+        val location = locationManager.getLastKnownLocation(bestProvider)
+        if (location != null) {
+            onLocationChanged(location)
+        }
+    }
+
+    fun onLocationChanged(location: Location?) {
+
+        val vdCurrentNotShadow = activity?.getDrawable(R.drawable.ic_currentlocation_noshadow)
+        vdCurrentNotShadow?.setBounds(0, 0, 50, 50)
+        val bmCurrentNotShadow = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888)
+        val cvCurrentNotShadow = Canvas(bmCurrentNotShadow)
+        vdCurrentNotShadow?.draw(cvCurrentNotShadow)
+        val bdCurrentNotShadow: BitmapDescriptor = BitmapDescriptorFactory.fromBitmap(bmCurrentNotShadow)
+
+        val cdShadow = activity?.getDrawable(R.drawable.ic_shadow)
+        cdShadow?.setBounds(0, 0, 700, 700)
+        val bmShadow = Bitmap.createBitmap(700, 700, Bitmap.Config.ARGB_8888)
+        val cvShadow = Canvas(bmShadow)
+        cdShadow?.draw(cvShadow)
+        val bdShadow: BitmapDescriptor = BitmapDescriptorFactory.fromBitmap(bmShadow)
+
+        if (location != null) {
+            val latLng = LatLng(location.latitude, location.longitude)
+//            gmap?.clear()
+//            val marker = gmap?.addMarker(MarkerOptions().position(latLng))
+//            marker?.showInfoWindow()
+            gmap?.addGroundOverlay(
+                GroundOverlayOptions()
+                    .position(latLng, 50f)
+                    .transparency(0.5f)
+                    .image(bdShadow)
+            )
+            gmap?.addMarker(
+                MarkerOptions()
+                    .flat(true)
+                    .icon(bdCurrentNotShadow)
+                    .anchor(0.5f, 0.5f)
+                    .position(latLng)
+            )
+        } else {
+            //Toast.makeText(context, "Location not found", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setDismissProgressLoadMapDialog() {
-        gmap.setOnMapLoadedCallback {
+        gmap?.setOnMapLoadedCallback {
             progressBarAddLocation.visibility = View.GONE
         }
     }
