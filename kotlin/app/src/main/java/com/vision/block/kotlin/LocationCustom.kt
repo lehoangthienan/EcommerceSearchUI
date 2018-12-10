@@ -21,7 +21,8 @@ class LocationCustom {
         avatar: String,
         lat: Double,
         lng: Double,
-        viewMemberLocation: View?
+        viewMemberLocation: View?,
+        name: String
     ) {
         renderImage(viewMemberLocation?.context!!, avatar, object : SimpleTarget<Bitmap>() {
             override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
@@ -33,7 +34,7 @@ class LocationCustom {
                             lat,
                             lng
                         )
-                    ).title("Macbook Pro 2018").snippet("Sản Xuất tại Trung Quốc nhập khẩu qua Việt Nam")
+                    ).title(name).snippet("Sản Xuất tại Trung Quốc nhập khẩu qua Việt Nam")
                         .icon(icon)
                 )
             }
