@@ -38,35 +38,49 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill,TextFields"/>
 
-    <Spinner
-            android:id="@+id/sp2"
-            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-            android:layout_width="240dp"
+    <LinearLayout
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:popupBackground="@drawable/drawable_search_view"
+            android:elevation="10dp"
+            android:background="@drawable/drawable_search_view"
             android:layout_alignBottom="@+id/etSearch"
-            android:layout_marginLeft="10dp"
-            android:backgroundTint="@color/colorText"
-            android:entries="@array/category_arrays"
-            android:layerType="software"
-            android:popupElevation="1dp"
-            android:scrollbarSize="10dp"
-            android:layout_marginBottom="-59dp"/>
+            android:orientation="horizontal"
+            android:layout_marginBottom="-51dp">
 
-    <Spinner
-            android:id="@+id/sp1"
-            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-            android:layout_width="130dp"
-            android:layout_height="45dp"
-            android:popupBackground="@drawable/drawable_search_view"
-            android:layout_alignBottom="@+id/etSearch"
-            android:layout_marginLeft="270dp"
-            android:backgroundTint="@color/colorText"
-            android:entries="@array/radius_arrays"
-            android:layerType="software"
-            android:popupElevation="1dp"
-            android:scrollbarSize="10dp"
-            android:layout_marginBottom="-59dp"/>
+        <Spinner
+                android:id="@+id/sp2"
+                android:layout_width="230dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="45dp"
+                android:popupBackground="@drawable/drawable_search_view"
+                android:layout_alignBottom="@+id/etSearch"
+                android:backgroundTint="@color/colorText"
+                android:entries="@array/category_arrays"
+                android:layerType="software"
+                android:popupElevation="1dp"
+                android:scrollbarSize="10dp"
+                android:layout_marginBottom="-59dp"/>
+
+        <ImageView
+                android:src="@drawable/ic_iconline"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+        <Spinner
+                android:id="@+id/sp1"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:popupBackground="@drawable/drawable_search_view"
+                android:backgroundTint="@color/colorText"
+                android:entries="@array/radius_arrays"
+                android:layerType="software"
+                android:popupElevation="1dp"
+                android:scrollbarSize="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="-59dp"/>
+    </LinearLayout>
 
     <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progressBarAddLocation"
