@@ -50,12 +50,21 @@
                         android:textSize="20sp"
                         android:layout_gravity="center"/>
 
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/rvProducts"
+                <LinearLayout
                         android:layout_width="match_parent"
+                        android:background="@color/unselectedColor"
                         android:layout_marginTop="10dp"
-                        android:layout_height="243dp"
-                />
+                        android:layout_height="247dp">
+
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvProducts"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="243dp"
+                    />
+                </LinearLayout>
 
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>

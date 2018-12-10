@@ -11,6 +11,7 @@ import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.*
+import kotlinx.android.synthetic.main.bottom_sheet_products.*
 import kotlinx.android.synthetic.main.fragment_map.*
 
 
@@ -36,8 +38,20 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        loadProductsToRecyclerView()
         addFakeData()
         addEvents()
+    }
+
+    private fun loadProductsToRecyclerView() {
+        try {
+            rvProducts.apply {
+                this.layoutManager = LinearLayoutManager(activity)
+                this.adapter = ProductsAdapter(products)
+            }
+
+        } catch (e: Exception) {
+        }
     }
 
     private fun addFakeData() {
@@ -48,7 +62,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://macbookshop.vn/wp-content/uploads/2018/07/Macbook-pro-13inch-2018-TouchBar-SILVER.jpeg",
                 10.869251,
-                106.801489
+                106.801489,
+                "Lê Hoàng Thiên Ấn"
             )
         )
         products.add(
@@ -58,7 +73,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://zdnet4.cbsistatic.com/hub/i/2018/09/21/7d30bae4-58d0-4168-87f3-6ec65630aa31/b1a7c19baa291431560da3d607cf6ffe/iphone-xs-max.jpg",
                 10.864005,
-                106.795705
+                106.795705,
+                "Lê Hoàng Thiên Ấn"
             )
         )
         products.add(
@@ -68,7 +84,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "http://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Le%C3%AFko_au_bois_de_la_Cambre.jpg/440px-Le%C3%AFko_au_bois_de_la_Cambre.jpg",
                 10.875063,
-                106.801398
+                106.801398,
+                "Trần Văn Rin"
             )
         )
         products.add(
@@ -78,7 +95,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://i.ytimg.com/vi/KeYSjZfojbo/maxresdefault.jpg",
                 10.868152,
-                106.795519
+                106.795519,
+                "Lê Hoàng Thiên Ấn"
             )
         )
         products.add(
@@ -88,7 +106,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "http://www.motorcyclelife.com.au/wp-content/uploads/2017/02/2017-Honda-SH150.jpg",
                 10.865159,
-                106.804788
+                106.804788,
+                "Lê Giô Na"
             )
         )
         products.add(
@@ -98,7 +117,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://donghosaigon.vn/wp-content/uploads/2017/03/dong-ho-nam-deo-tay-casio-edifice-efr-552d-1a3vudf-chinh-hang-tphcm.jpg",
                 10.870554,
-                106.808608
+                106.808608,
+                "Lê Hoàng Thiên Ấn"
             )
         )
         products.add(
@@ -108,7 +128,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://cellphones.com.vn/media/wysiwyg/accessories/speaker/loa-xiaomi-square-box-2-1.jpg",
                 10.861198,
-                106.798265
+                106.798265,
+                "Đặng Việt Dũng"
             )
         )
         products.add(
@@ -118,7 +139,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://cdn.concung.com/25457-24709-gtt_large/ly-co-quai-superware-hoa-tiet-hello-kitty-c352-2.jpg",
                 10.858837,
-                106.798823
+                106.798823,
+                "Lê Hoàng Thiên Ấn"
             )
         )
         products.add(
@@ -128,7 +150,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://gaubongdep.com/wp-content/uploads/2017/07/hinh-san-pham-goi-tron-cho-shiba-truoc.jpg",
                 10.863726,
-                106.804016
+                106.804016,
+                "Đặng Việt Dũng"
             )
         )
         products.add(
@@ -138,7 +161,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "http://www.gsbattery.vn/Data/Sites/1/Product/9/gt5a.jpg",
                 10.857404,
-                106.801484
+                106.801484,
+                "Lê Giô Na"
             )
         )
         products.add(
@@ -148,7 +172,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://www.ircvietnam.com/images/product/100-90-14%20ss560f%20%20-%20100-90-14%20ss560r.jpg",
                 10.863684,
-                106.804788
+                106.804788,
+                "Trần Văn Rin"
             )
         )
         products.add(
@@ -158,7 +183,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
                 "",
                 "https://media.thethao247.vn/upload/quy/2017/03/22/winner-9.JPG",
                 10.862335,
-                106.806505
+                106.806505,
+                "Lê Hoàng Thiên Ấn"
             )
         )
     }

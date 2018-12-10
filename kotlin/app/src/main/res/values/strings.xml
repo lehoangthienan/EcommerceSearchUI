@@ -46,4 +46,24 @@
     <string name="title_ot_sales">Hot Sales</string>
     <string name="title_cart">Cart</string>
     <string name="title_product">My Product</string>
+
+    <string-array name="radius_arrays">
+        <item>5Km</item>
+        <item>10Km</item>
+        <item>15m</item>
+        <item>20Km</item>
+    </string-array>
+
+    <string-array name="category_arrays">
+        <item>House</item>
+        <item>Motorcycles And Cars</item>
+        <item>Electronice Device</item>
+        <item>Mother And Baby</item>
+        <item>Interior And Exterior</item>
+        <item>Fashion</item>
+        <item>Sport</item>
+        <item>Pet</item>
+    </string-array>
+
+
 </resources>
