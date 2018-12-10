@@ -38,6 +38,36 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill,TextFields"/>
 
+    <Spinner
+            android:id="@+id/sp2"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="240dp"
+            android:layout_height="45dp"
+            android:popupBackground="@drawable/drawable_search_view"
+            android:layout_alignBottom="@+id/etSearch"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/colorText"
+            android:entries="@array/category_arrays"
+            android:layerType="software"
+            android:popupElevation="1dp"
+            android:scrollbarSize="10dp"
+            android:layout_marginBottom="-59dp"/>
+
+    <Spinner
+            android:id="@+id/sp1"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:popupBackground="@drawable/drawable_search_view"
+            android:layout_alignBottom="@+id/etSearch"
+            android:layout_marginLeft="270dp"
+            android:backgroundTint="@color/colorText"
+            android:entries="@array/radius_arrays"
+            android:layerType="software"
+            android:popupElevation="1dp"
+            android:scrollbarSize="10dp"
+            android:layout_marginBottom="-59dp"/>
+
     <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progressBarAddLocation"
             style="@style/SpinKitView.Large.WanderingCubes"
