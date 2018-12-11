@@ -64,3 +64,26 @@ class LocationCustom {
     }
 
 }
+
+//<?xml version="1.0" encoding="utf-8"?>
+//<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+//android:layout_width="58dp"
+//android:layout_height="58dp">
+//
+//
+//<de.hdodenhof.circleimageview.CircleImageView
+//android:id="@+id/ivMarker"
+//android:layout_width="30dp"
+//android:src="@drawable/ic_user"
+//android:layout_height="30dp"
+//android:layout_alignParentTop="true" android:layout_marginTop="6dp" android:layout_alignParentStart="true"
+//android:layout_marginStart="15dp"/>
+//
+//<RelativeLayout
+//android:layout_width="58dp"
+//android:layout_height="58dp"
+//android:background="@drawable/ic_placeholder"
+//android:layout_alignParentStart="true" android:layout_alignParentTop="true"/>
+//
+//
+//</RelativeLayout>

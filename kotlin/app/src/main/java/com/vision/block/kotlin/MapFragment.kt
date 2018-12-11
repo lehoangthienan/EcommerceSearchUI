@@ -12,6 +12,7 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -236,12 +237,13 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
         }
         val location = locationManager.getLastKnownLocation(bestProvider)
         if (location != null) {
+            Log.d("LocationXXX", location.toString())
             onLocationChanged(location)
         }
     }
 
     fun onLocationChanged(location: Location?) {
-
+        Log.d("LocationXXX", location.toString())
         val vdCurrentNotShadow = activity?.getDrawable(R.drawable.ic_currentlocation_noshadow)
         vdCurrentNotShadow?.setBounds(0, 0, 50, 50)
         val bmCurrentNotShadow = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888)

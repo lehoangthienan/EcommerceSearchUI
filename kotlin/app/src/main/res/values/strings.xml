@@ -50,7 +50,7 @@
     <string-array name="radius_arrays">
         <item>5Km</item>
         <item>10Km</item>
-        <item>15m</item>
+        <item>15Km</item>
         <item>20Km</item>
     </string-array>
 
