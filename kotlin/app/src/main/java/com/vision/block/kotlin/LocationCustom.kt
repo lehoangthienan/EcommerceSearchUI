@@ -11,6 +11,7 @@ import com.bumptech.glide.request.transition.Transition
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.layout_custom_marker.view.*
 
@@ -28,7 +29,7 @@ class LocationCustom {
             override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                 viewMemberLocation.ivMarker.setImageBitmap(resource)
                 val icon = BitmapDescriptorFactory.fromBitmap(viewMemberLocation.convertToBitmap())
-                googleMap?.addMarker(
+                val marker: Marker = googleMap?.addMarker(
                     MarkerOptions().position(
                         LatLng(
                             lat,
@@ -36,7 +37,9 @@ class LocationCustom {
                         )
                     ).title(name).snippet("Sản Xuất tại Trung Quốc nhập khẩu qua Việt Nam")
                         .icon(icon)
-                )
+                )!!
+                marker.tag = R.layout.tag_marker
+                marker.showInfoWindow()
             }
         })
     }

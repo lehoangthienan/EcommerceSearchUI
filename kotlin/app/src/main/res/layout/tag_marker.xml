@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="270dp"
+        android:layout_height="160dp">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Macbook Pro 2018"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/lato_regular"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="52dp" android:id="@+id/textView"/>
+
+    <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors."
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/lato_regular"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:id="@+id/textView2"/>
+
+    <Button
+            android:text="View Detail"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lato_regular"
+            android:background="@drawable/buttonloginfacebook"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="76dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+
+
+</android.support.constraint.ConstraintLayout>
