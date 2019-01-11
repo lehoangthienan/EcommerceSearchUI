@@ -34,7 +34,7 @@ class ProductDetailActivity : AppCompatActivity() {
         btPhoneNumber.setOnClickListener {
             isCheck= !isCheck
             if(!isCheck) btPhoneNumber.text = "(+84)973043044"
-            else btPhoneNumber.text = "TOUCH TO SHOW PHONEN NUMBER"
+            else btPhoneNumber.text = "TOUCH TO SHOW PHONE NUMBER"
         }
     }
 

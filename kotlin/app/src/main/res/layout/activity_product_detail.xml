@@ -228,7 +228,7 @@ Also unchanged for 2017 is the lack of connectivity at the sides. That’s right
                     android:clickable="true"
                     android:elevation="10dp"
                     android:foreground="?android:attr/selectableItemBackground"
-                    android:text="TOUCH TO SHOW PHONEN NUMBER"
+                    android:text="TOUCH TO SHOW PHONE NUMBER"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:gravity="center"
