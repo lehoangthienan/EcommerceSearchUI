@@ -20,7 +20,9 @@ class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private fun loadText(product: Product, itemView: View) {
         itemView.tvName.text = product.name
         itemView.tvPrice.text = product.price
-        itemView.tvBranchName.text = product.owner
+        itemView.tvBranchName.text = product.content
+        itemView.tvAddress.text = product.address
+        itemView.tvDistance.text = product.distance
     }
 
     private fun loadImage(context: Context, product: Product, itemView: View?) {

@@ -7,5 +7,7 @@ data class Product(
     var image: String? = null,
     var lat: Double? = null,
     var lng: Double? = null,
-    var owner: String? = null
+    var owner: String? = null,
+    var distance: String? = null,
+    var address: String? = null
 )
