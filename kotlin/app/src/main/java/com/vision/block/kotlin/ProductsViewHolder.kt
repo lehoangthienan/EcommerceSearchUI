@@ -2,9 +2,11 @@ package com.vision.block.kotlin
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.item_product.*
 import kotlinx.android.synthetic.main.item_product.view.*
 
 class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -14,6 +16,18 @@ class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     ) {
         loadImage(context, product, itemView)
         loadText(product, itemView)
+        addEvents(context)
+    }
+
+    private fun addEvents(context: Context) {
+        itemView.cvItemProduct.setOnClickListener {
+            startProductDetail(context)
+        }
+    }
+
+    private fun startProductDetail(context: Context) {
+        val intent = Intent(context,ProductDetailActivity::class.java)
+        context.startActivity(intent)
     }
 
     @SuppressLint("SetTextI18n")

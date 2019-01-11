@@ -35,7 +35,7 @@ class LocationCustom {
                             lat,
                             lng
                         )
-                    ).title(name).snippet("Sản Xuất tại Trung Quốc nhập khẩu qua Việt Nam")
+                    ).title(name).snippet("Made in China exported through Vietnam")
                         .icon(icon)
                 )!!
                 marker.tag = R.layout.tag_marker

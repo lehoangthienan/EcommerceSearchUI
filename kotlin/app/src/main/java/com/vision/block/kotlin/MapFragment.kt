@@ -61,156 +61,156 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
             Product(
                 "Macbook Pro 2018",
                 "22.000.000VND",
-                "Hàng đẹp như mới, bao kiểm thử",
+                "Nice goods like new, test bags",
                 "https://macbookshop.vn/wp-content/uploads/2018/07/Macbook-pro-13inch-2018-TouchBar-SILVER.jpeg",
                 10.869251,
                 106.801489,
                 "Lê Hoàng Thiên Ấn",
                 "1.1 km",
-                "123 Hùng Vương, Thủ Đức, HCM"
+                "123 Hung Vuong, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Iphone Xs Max 256gb",
                 "12.000.000VND",
-                "Mới mua 5 ngày, đổi máy khác",
+                "Just bought 5 days, change the other machine",
                 "https://zdnet4.cbsistatic.com/hub/i/2018/09/21/7d30bae4-58d0-4168-87f3-6ec65630aa31/b1a7c19baa291431560da3d607cf6ffe/iphone-xs-max.jpg",
                 10.864005,
                 106.795705,
                 "Lê Hoàng Thiên Ấn",
                 "2.5 km",
-                "99 Trần Hưng Đạo, Thủ Đức, HCM"
+                "99 Tran Hung Dao, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Husky dog of Alaska",
                 "8.000.000VND",
-                "Chó xấu nên bán, nó ăn quá nhiều",
+                "Bad dogs should sell, it eats too much",
                 "http://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Le%C3%AFko_au_bois_de_la_Cambre.jpg/440px-Le%C3%AFko_au_bois_de_la_Cambre.jpg",
                 10.875063,
                 106.801398,
                 "Trần Văn Rin",
                 "1.5 km",
-                "330, Ngô Quyền, Thủ Đức, HCM"
+                "330, Ngo Quyen, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Mazda 6 2.5L 2019",
                 "22.000.000VND",
-                "Xe chạy lướt, hơn 5000km, mới cứng",
+                "Running cars, over 5000km, new hard",
                 "https://i.ytimg.com/vi/KeYSjZfojbo/maxresdefault.jpg",
                 10.868152,
                 106.795519,
                 "Lê Hoàng Thiên Ấn",
                 "4.0 km",
-                "99 Độc Lập, Thủ Đức, HCM"
+                "99 Doc Lap, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Honda SH 150i ABS",
                 "100.000.000VND",
-                "Xe trúng thưởng, bán cho ai cần",
+                "Winning cars, sold to anyone in need",
                 "http://www.motorcyclelife.com.au/wp-content/uploads/2017/02/2017-Honda-SH150.jpg",
                 10.865159,
                 106.804788,
                 "Lê Giô Na",
                 "3.3 km",
-                "56 Võ Văn Ngân, Thủ Đức, HCM"
+                "56 Vo Van Ngan, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Casio Edifice FF G123",
                 "15.000.000VND",
-                "Đồng hộ fake bán gấp trong ngày",
+                "Fake households sell for more than a day",
                 "https://donghosaigon.vn/wp-content/uploads/2017/03/dong-ho-nam-deo-tay-casio-edifice-efr-552d-1a3vudf-chinh-hang-tphcm.jpg",
                 10.870554,
                 106.808608,
                 "Lê Hoàng Thiên Ấn",
                 "3.2 km",
-                "78 Hoàng Diệu 2, Thủ Đức, HCM"
+                "78 Hoang Dieu 2, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Loa Xiaomi square box 2",
                 "700.000VND",
-                "Loa xịn ít sài nên bán",
+                "Loud speakers should use less\n",
                 "https://cellphones.com.vn/media/wysiwyg/accessories/speaker/loa-xiaomi-square-box-2-1.jpg",
                 10.861198,
                 106.798265,
                 "Đặng Việt Dũng",
                 "4.5 km",
-                "23 Đoàn Kết, Thủ Đức, HCM"
+                "23 Doan Ket, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Kitty for sleep",
                 "200.000VND",
-                "Ít dùng nên bán cho ai cần",
+                "Less used should be sold to anyone who needs it",
                 "https://cdn.concung.com/25457-24709-gtt_large/ly-co-quai-superware-hoa-tiet-hello-kitty-c352-2.jpg",
                 10.858837,
                 106.798823,
                 "Lê Hoàng Thiên Ấn",
                 "5.0 km",
-                "77 Man Thiện, Quận 9, HCM"
+                "77 Man Thien, District 9, HCM"
             )
         )
         products.add(
             Product(
                 "Shiba",
                 "1.000.000VND",
-                "Chó xấu nên bán",
+                "Bad dogs should be sold",
                 "https://gaubongdep.com/wp-content/uploads/2017/07/hinh-san-pham-goi-tron-cho-shiba-truoc.jpg",
                 10.863726,
                 106.804016,
                 "Đặng Việt Dũng",
                 "4.9 km",
-                "89 Lê Văn Việt, Quận 9 , HCM"
+                "89 Le Van Viet, District 9, HCM"
             )
         )
         products.add(
             Product(
                 "Acqui GS for moto",
                 "2.000.000VND",
-                "Hàng mới 100%",
+                "New 100%",
                 "http://www.gsbattery.vn/Data/Sites/1/Product/9/gt5a.jpg",
                 10.857404,
                 106.801484,
                 "Lê Giô Na",
                 "3.7 km",
-                "66 đường số 9, Thủ Đức, HCM"
+                "66 Road No. 9, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Tire for moto",
                 "1.500.000VND",
-                "Mới 100%",
+                "New 100%",
                 "https://www.ircvietnam.com/images/product/100-90-14%20ss560f%20%20-%20100-90-14%20ss560r.jpg",
                 10.863684,
                 106.804788,
                 "Trần Văn Rin",
                 "3,7 km",
-                "88 đường số 12, Thủ Đức, HCM"
+                "88 Road No. 12, Thu Duc, HCM"
             )
         )
         products.add(
             Product(
                 "Honda Winner 150",
                 "39.000.000VND",
-                "Xe cũ chạy 10.000km, tai nạn nên bán",
+                "Old cars 10,000km, accidents should sold",
                 "https://media.thethao247.vn/upload/quy/2017/03/22/winner-9.JPG",
                 10.862335,
                 106.806505,
                 "Lê Hoàng Thiên Ấn",
                 "3.9 km",
-                "90, đường 25, Thủ Đức, HCM"
+                "90, Road 25, Thu Duc, HCM"
             )
         )
     }
@@ -219,13 +219,6 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
         floatingActionButton.setOnClickListener {
             showCurrentLocation()
         }
-        cvItemProduct.setOnClickListener {
-            startProductDetail()
-        }
-    }
-
-    private fun startProductDetail() {
-
     }
 
     private fun addMarker() {
